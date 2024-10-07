@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFORMACIÓN DE CONTACTOS</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"> 
+
+    <!-- Script valida entrada solo números en el input teléfono -->
+    <script>
+        function validarNumero(input) {
+            var regex = /^[0-9]+$/;
+            return regex.test(input);
+        }
+
+        function validarFormulario() {
+            var numeroInput = document.getElementById("telefono");
+            var telefono = numeroInput.value.trim();
+
+            if (!validarNumero(telefono)) {
+                alert("Por favor, ingrese solo números.");
+                numeroInput.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <!-- Scrip textos a Mayúsculas -->
+    <script>
+        function mayus(e) {
+            e.value = e.value.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>INFORMACIÓN DE CONTACTOS</h1>
+        <form method="post" class="form_contact" onsubmit="return validarFormulario();">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <!-- <div class="form-row mb-2">              
+                <div class="form-group col-md-6">
+                    <label  >Nombres: <span class="text-danger" >*</span></label>
+                    {{ form.nombres }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Apellidos: <span class="text-danger">*</span></label>
+                    {{ form.apellidos }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Rut:<span class="text-danger">*</span></label>
+                    {{ form.rut }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Correo electrónico: <span class="text-danger">*</span></label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Dirección: <span class="text-danger">*</span></label>
+                    {{ form.direccion }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Comuna: <span class="text-danger">*</span></label>
+                    {{ form.comuna }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Teléfono: <span class="text-danger">*</span></label>
+                    {{ form.telefono }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Escribe tu respuesta aquí: <span class="text-danger">*</span></label>
+                    {{ form.mensaje }}
+                </div>
+            </div>-->
+            <br>
+            <button type="submit" class="btn btn-primary width-100"><b>INGRESAR DATOS</b></button>
+        </form>
+    </div>
+</body>
+</html>

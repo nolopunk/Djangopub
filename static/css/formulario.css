@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('{% static "fonts/fontawesome-webfont.eot?v=4.7.0" %}');
+    src: url('{% static "fonts/fontawesome-webfont.eot?#iefix&v=4.7.0" %}') format('embedded-opentype'),
+         url('{% static "fonts/fontawesome-webfont.woff2?v=4.7.0" %}') format('woff2'),
+         url('{% static "fonts/fontawesome-webfont.woff?v=4.7.0" %}') format('woff'),
+         url('{% static "fonts/fontawesome-webfont.ttf?v=4.7.0" %}') format('truetype'),
+         url('{% static "fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular" %}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    background: #DBDBDB;
+    background-image: url('/static/images/fondo.jpg');
+    font-family: 'Open sans';
+    background-size: cover;
+  }
+
+/*contenedor formulario*/
+.container {
+    opacity: 0.82;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    height: 1350px; 
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+/*boton almacenar*/
+.btn {
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    min-width: 15rem;
+    /*float: right;*/
+    cursor: pointer;
+    background: #E25151;
+    color: #fff;
+}
+
+.btn2 {
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    min-width: 15rem;
+    /*float: left;*/
+    cursor: pointer;
+    background: #E25151;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Formulario de contacto*/
+form.form_contact{
+    padding: 2px 2px; 
+}
+
+form.form_contact h2{
+    font-size: 35px; /**/
+    font-weight: 600;
+    color: #303030;
+    margin-bottom: 30px;
+}
+
+form.form_contact .user_info{
+    display: flex;
+    flex-direction: column;
+}
+
+form.form_contact label{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+form.form_contact input,
+form.form_contact textarea{
+    width: 100%;
+    padding: 8px 0px 5px;
+    margin-bottom: 30px;
+
+    border: none;
+    border-bottom: 2px solid #D1D1D1;
+
+    font-family: 'Open sans';
+    color: #5A5A5A;
+    font-size: 20px; /**/
+    font-weight: 400;
+}
+
+form.form_contact input[type="button"]{
+    width: 180px;
+    background: #4091EC;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+
+    align-self: flex-end;
+
+    color: #fff;
+    font-family: 'Open sans';
+    font-size: 26px; /**/
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form.form_contact input[type="button"]:hover{
+    background: #3371B6;
+}
+
+form.form_contact input[type="checkbox" i] {
+    width: 50%;
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    margin: 5px 5px 5px 5px;
+    padding: initial;
+    border: initial;
+}
+
+form.form_contact input[type="text"], textarea {
+    text-transform: uppercase;
+}
+
+/* Estilo para el popup */
+#popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
